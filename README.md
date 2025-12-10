@@ -33,7 +33,6 @@ en términos de **MOS_LQO (Listening Quality Objective)**, a partir de un par de
 - Mapeo perceptual propio:
   - Indicadores normalizados → `MOS_like` → **`MOS_LQO`** (1 a ~4.5).
 
-## Diagrama de bloques de la implementacion del algoritmo
 ## Diagrama de bloques de la implementación del algoritmo
 
 <p align="center">
