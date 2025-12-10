@@ -48,4 +48,27 @@ en términos de **MOS_LQO (Listening Quality Objective)**, a partir de un par de
   </em>
 </p>
 
+## Requisitos de instalación en Python
+
+Para ejecutar el script `polqa.py` se requiere:
+
+- Python **3.8** o superior
+- Librerías de Python:
+  - `numpy`
+  - `scipy`
+  - `soundfile` (opcional pero recomendada)
+- **ffmpeg** instalado y accesible desde la variable de entorno `PATH`  
+  (necesario para leer formatos no-WAV como OGG, MP3, etc.)
+
+Instalación de las librerías en Python:
+
+pip install numpy scipy soundfile
+choco install ffmpeg
+
+## Uso del archivo polqa.py
+Modo fullband
+- python polqa.py ref.wav deg.wav --mode fb
+Modo narrowband
+- python polqa.py ref.wav deg.wav --mode nb
+
 
