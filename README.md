@@ -33,3 +33,41 @@ en términos de **MOS_LQO (Listening Quality Objective)**, a partir de un par de
 - Mapeo perceptual propio:
   - Indicadores normalizados → `MOS_like` → **`MOS_LQO`** (1 a ~4.5).
 
+## Diagrama de bloques de la implementacion del algoritmo
+ENTRADAS
+────────
+ref.wav → referencia (“ideal”)
+deg.wav → señal degradada
+
+PREPROCESADO
+────────────
+ref: Carga + Nivel ─┐
+                    ├─ Prefiltrado NB/FB → VAD temporal (ref)
+deg: Carga + Nivel ─┘
+
+ALINEAMIENTO
+────────────
+Señales preprocesadas
+      ↓
+[5] Alineamiento grueso (similitud por frames)
+      ↓
+[6] Alineamiento fino + drift de fs
+      ↓
+[7] Time-Warp OLA (señal degradada alineada)
+
+ANÁLISIS PSICOACÚSTICO
+───────────────────────
+[8] STFT + Bark → B_ref, B_deg
+[9] VAD espectral → tramo activo
+[10] Compensación de ganancia lenta → B_deg2
+
+INDICADORES + MOS
+─────────────────
+[11] DISTURB, FREQ, NOISE, corr_bark
+      ↓
+[12] Mapeo perceptual → MOS_like → MOS_LQO
+
+SALIDA
+──────
+{ MOS_LQO, MOS_like, DISTURB, FREQ, NOISE }
+
