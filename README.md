@@ -62,13 +62,13 @@ Para ejecutar el script `polqa.py` se requiere:
 
 Instalación de las librerías en Python:
 
-pip install numpy scipy soundfile
-choco install ffmpeg
+- pip install numpy scipy soundfile
+- choco install ffmpeg
 
 ## Uso del archivo polqa.py
-Modo fullband
+###Modo fullband
 - python polqa.py ref.wav deg.wav --mode fb
-Modo narrowband
+###Modo narrowband
 - python polqa.py ref.wav deg.wav --mode nb
 
 
