@@ -66,9 +66,8 @@ Instalación de las librerías en Python:
 - choco install ffmpeg
 
 ## Uso del archivo polqa.py
-###Modo fullband
+Modo fullband (fb), Modo narrowband (nb)
 - python polqa.py ref.wav deg.wav --mode fb
-###Modo narrowband
 - python polqa.py ref.wav deg.wav --mode nb
 
 
